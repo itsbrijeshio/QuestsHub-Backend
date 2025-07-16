@@ -66,7 +66,7 @@ npm run dev
 | ------ | -------------------- | ------ | ----------------------- | --- |
 | POST   | `/api/auth/register` | Public | Register a new user     |     |
 | POST   | `/api/auth/login`    | Public | Login and receive token |     |
-| POST   | `/api/auth/me`       | Auth   | Get current user info   |     |
+| GET    | `/api/auth/me`       | Auth   | Get current user info   |     |
 
 ## 🧾 License
 
