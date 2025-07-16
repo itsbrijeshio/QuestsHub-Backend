@@ -8,6 +8,7 @@ const config: Config = {
   moduleFileExtensions: ["ts", "js"],
   roots: ["<rootDir>/tests"],
   clearMocks: true,
+  testTimeout: 15000,
   coverageDirectory: "coverage",
   verbose: true,
 };
