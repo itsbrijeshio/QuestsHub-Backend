@@ -1,8 +1,13 @@
 import { config } from "dotenv";
 
-config({
-  path: process.env.NODE_ENV === "production" ? ".env" : ".env.dev",
-});
+const envFile =
+  process.env.NODE_ENV === "production"
+    ? ".env"
+    : process.env.NODE_ENV === "test"
+    ? ".env.test"
+    : ".env.dev";
+
+config({ path: envFile, quiet: true });
 
 const env = {
   NODE_ENV: process.env.NODE_ENV,
