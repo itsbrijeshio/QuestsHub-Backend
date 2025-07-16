@@ -55,7 +55,7 @@ class UserService {
     ) {
       throw new ApiError({
         type: "NotFoundError",
-        code: 400,
+        code: 404,
         message: "Invalid credentials",
       });
     }
