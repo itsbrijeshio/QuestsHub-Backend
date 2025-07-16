@@ -10,6 +10,7 @@ const env = {
   MONGODB_URL: process.env.MONGODB_URL,
   JWT_SECRET: process.env.JWT_SECRET as string,
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN as string,
+  FRONTEND_URL: process.env.FRONTEND_URL as string,
 };
 
 export default env;
