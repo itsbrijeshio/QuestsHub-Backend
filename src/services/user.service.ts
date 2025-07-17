@@ -75,6 +75,15 @@ class UserService {
 
     return this.sanitize(user);
   }
+
+  public async github(githubId: string, username: string): Promise<any> {
+    const user = await this.userModel.findOne({ githubId });
+    if (user) {
+      return this.sanitize(user);
+    }
+    const newUser = await this.userModel.create({ githubId, username });
+    return this.sanitize(newUser);
+  }
 }
 
 export default UserService;
