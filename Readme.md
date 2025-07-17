@@ -50,6 +50,9 @@ MONGODB_URL=mongodb://localhost:27017/quests-hub
 JWT_SECRET=HZWTpvkA7PxnDywZgebHUH9RnFLnxf2D
 JWT_EXPIRES_IN=3
 FRONTEND_URL=http://localhost:5173
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+GITHUB_CB_URL=http://localhost:3000/api/auth/github/callback
 ```
 
 ### ▶️ Run the dev server
@@ -62,11 +65,13 @@ npm run dev
 
 ## 🔐 Authentication Endpoints
 
-| Method | Route                | Access | Description             |     |
-| ------ | -------------------- | ------ | ----------------------- | --- |
-| POST   | `/api/auth/register` | Public | Register a new user     |     |
-| POST   | `/api/auth/login`    | Public | Login and receive token |     |
-| GET    | `/api/auth/me`       | Auth   | Get current user info   |     |
+| Method | Route                          | Access | Description             |     |
+| ------ | ------------------------------ | ------ | ----------------------- | --- |
+| POST   | `/api/auth/register`           | Public | Register a new user     |     |
+| POST   | `/api/auth/login`              | Public | Login and receive token |     |
+| GET    | `/api/auth/me`                 | Auth   | Get current user info   |     |
+| GET    | `/api/auth/github`             | Public | Login with github       |     |
+| GET    | `/api/auth/github/callback`    | Public | Login and receive token |     |
 
 ## 🧾 License
 
