@@ -1,3 +1,4 @@
+import questModel from "./quest.model";
 import userModel from "./user.model";
 
-export { userModel };
+export { questModel, userModel };

@@ -1,3 +1,4 @@
 import AuthController from "./auth.controller";
+import QuestController from "./quest.controller";
 
-export { AuthController };
+export { AuthController, QuestController };

@@ -3,14 +3,8 @@ import { AuthRequest } from "../types/error.type";
 import { ApiError } from "../utils";
 import asyncHandler from "./asyncHandler";
 import { env } from "../config";
-import { RequestHandler } from "express";
 
-// Auth Guard
-interface Auth extends RequestHandler {
-  roleGuard?: (roles: string[]) => RequestHandler;
-}
-
-const authGuard: Auth = asyncHandler(async (req: AuthRequest, res, next) => {
+const authGuard: any = asyncHandler(async (req: AuthRequest, res, next) => {
   const token = req.headers?.["x-access-token"]?.toString();
   const accessToken = req.cookies?.["accessToken"] || token?.split(" ")[1];
 
