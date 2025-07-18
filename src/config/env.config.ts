@@ -14,6 +14,8 @@ const env = {
   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID as string,
   GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET as string,
   GITHUB_CB_URL: process.env.GITHUB_CB_URL as string,
+  MAIL_USER: process.env.MAIL_USER as string,
+  MAIL_PASS: process.env.MAIL_PASS as string,
 };
 
 export default env;
