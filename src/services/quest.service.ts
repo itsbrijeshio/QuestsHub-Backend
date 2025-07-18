@@ -10,6 +10,18 @@ class QuestService {
     return sanitizedQuest;
   }
 
+  public async isQuestExist(questId: string): Promise<boolean> {
+    const isQuest = await this.questModel.findById(questId);
+    if (!isQuest) {
+      throw new ApiError({
+        type: "NotFoundError",
+        code: 404,
+        message: "Quest not found",
+      });
+    }
+    return !!isQuest;
+  }
+
   public async createQuest(createdBy: string, quest: QuestProps): Promise<any> {
     const newQuest = await this.questModel.create({ ...quest, createdBy });
     return this.sanitize(newQuest);
@@ -19,6 +31,7 @@ class QuestService {
     const skip = (query.page - 1) * query.limit;
     const quests = await this.questModel
       .find()
+      .select("-description")
       .populate("createdBy", "name")
       .skip(skip)
       .limit(query.limit);
